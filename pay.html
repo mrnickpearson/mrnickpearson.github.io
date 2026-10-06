@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pay - Nick Pearson</title>
+  <meta name="description" content="How to pay Nick Pearson for garden tool sharpening and sculpture. Bank transfer, card, or cash by arrangement.">
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root[data-theme="dark"] {
+      --bg: #080808; --bg-surface: #111111; --fg: #e8e0d8; --fg-muted: #8a8078;
+      --accent: #C07A28; --accent-hover: #d4892e; --border: rgba(255,255,255,0.08);
+      --toggle-bg: #1e1e1e; --header-bg: rgba(8,8,8,0.82); --input-bg: #1a1a1a;
+    }
+    :root[data-theme="light"] {
+      --bg: #f5f3f0; --bg-surface: #ffffff; --fg: #1a1814; --fg-muted: #6b6358;
+      --accent: #a0621c; --accent-hover: #b5711f; --border: rgba(0,0,0,0.10);
+      --toggle-bg: #e4e0da; --header-bg: rgba(245,243,240,0.86); --input-bg: #f5f3f0;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--fg); font-family: 'Jost', sans-serif; font-weight: 300; line-height: 1.6; -webkit-font-smoothing: antialiased; transition: background 0.3s, color 0.3s; min-height: 100vh; display: flex; flex-direction: column; }
+    a { color: inherit; }
+    .label { display: inline-block; font-size: 0.66rem; font-weight: 500; letter-spacing: 0.26em; text-transform: uppercase; color: var(--accent); }
+    h1, h2 { font-family: 'Cormorant Garamond', serif; font-weight: 300; line-height: 1.1; }
+    h1 { font-size: clamp(2.6rem, 7vw, 4.5rem); letter-spacing: 0.04em; margin-top: 0.4rem; }
+    h2 { font-size: 1.7rem; }
+    .container { max-width: 760px; margin: 0 auto; padding: 0 24px; width: 100%; }
+
+    header { position: sticky; top: 0; z-index: 50; background: var(--header-bg); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid var(--border); }
+    .hdr { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .wordmark { display: flex; flex-direction: column; gap: 1px; text-decoration: none; }
+    .wordmark-name { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 300; letter-spacing: 0.12em; text-transform: uppercase; line-height: 1; white-space: nowrap; }
+    .wordmark-sub { font-size: 0.52rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--accent); }
+    .theme-toggle { background: var(--toggle-bg); border: 1px solid var(--border); border-radius: 50px; padding: 6px 12px; cursor: pointer; color: var(--fg-muted); font-family: 'Jost', sans-serif; font-size: 0.64rem; letter-spacing: 0.14em; text-transform: uppercase; display: flex; align-items: center; gap: 7px; }
+    .theme-toggle:hover { color: var(--fg); border-color: var(--accent); }
+
+    main { flex: 1; padding: 56px 0 72px; }
+    .intro { color: var(--fg-muted); max-width: 520px; margin-top: 14px; font-size: 1.02rem; }
+
+    .card { background: var(--bg-surface); border: 1px solid var(--border); border-radius: 4px; padding: 28px 26px; margin-top: 28px; }
+    .card.primary { border-left: 2px solid var(--accent); }
+    .card p { color: var(--fg-muted); font-size: 0.92rem; margin-top: 8px; }
+    .card p strong { color: var(--fg); font-weight: 400; }
+    .tag { font-size: 0.62rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; display: block; }
+
+    .detail { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 12px; padding: 14px 0; border-top: 1px solid var(--border); }
+    .detail:first-of-type { margin-top: 18px; }
+    .detail .k { font-size: 0.64rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--fg-muted); }
+    .detail .v { font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; letter-spacing: 0.06em; margin-top: 2px; }
+    .detail .v.small { font-size: 1.25rem; letter-spacing: 0.02em; }
+    .copy { background: transparent; border: 1px solid var(--accent); color: var(--fg); cursor: pointer; padding: 9px 16px; border-radius: 2px; font-family: 'Jost', sans-serif; font-size: 0.64rem; letter-spacing: 0.18em; text-transform: uppercase; min-width: 86px; transition: background 0.2s, color 0.2s; }
+    .copy:hover { background: var(--accent); color: #fff; }
+    .copy.done { background: var(--accent); color: #fff; }
+
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 14px 28px; border-radius: 3px; cursor: pointer; text-decoration: none; font-family: 'Jost', sans-serif; font-size: 0.74rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; border: 1px solid var(--accent); background: var(--accent); color: #fff; margin-top: 18px; transition: background 0.2s; }
+    .btn:hover { background: var(--accent-hover); border-color: var(--accent-hover); }
+
+    .note { margin-top: 36px; font-size: 0.8rem; color: var(--fg-muted); max-width: 560px; }
+    .note a { color: var(--accent); text-decoration: none; }
+
+    footer { padding: 28px 0; border-top: 1px solid var(--border); }
+    .ft { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+    .ft span, .ft a { font-size: 0.64rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--fg-muted); text-decoration: none; }
+    .ft a:hover { color: var(--accent); }
+    .ft-links { display: flex; gap: 20px; flex-wrap: wrap; }
+
+    @media (max-width: 480px) {
+      .card { padding: 22px 18px; }
+      .detail .v { font-size: 1.45rem; }
+      .ft { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container hdr">
+    <a class="wordmark" href="/" aria-label="Back to the Nick Pearson hub">
+      <span class="wordmark-name">Nick Pearson</span>
+      <span class="wordmark-sub">Pay</span>
+    </a>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle colour mode"><span id="toggleIcon">&#9728;</span><span id="toggleLabel">Light mode</span></button>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <span class="label">Paying</span>
+    <h1>Three ways to pay</h1>
+    <p class="intro">Bank transfer is free and lands instantly, so if you can, use that. The card button is there if you'd rather. Either way, put your job reference on it so I know whose tools to put back in the bin.</p>
+
+    <!-- 1. Bank transfer -->
+    <div class="card primary">
+      <span class="tag">Easiest and free</span>
+      <h2>Bank transfer</h2>
+      <p>Open your banking app, add a new payee, copy these in. Your app will remember me after the first time.</p>
+      <div class="detail">
+        <div><div class="k">Payee name</div><div class="v small">MrNickPearson.com</div></div>
+        <button class="copy" data-copy="MrNickPearson.com">Copy</button>
+      </div>
+      <div class="detail">
+        <div><div class="k">Sort code</div><div class="v">04-00-06</div></div>
+        <button class="copy" data-copy="040006">Copy</button>
+      </div>
+      <div class="detail">
+        <div><div class="k">Account number</div><div class="v">17304936</div></div>
+        <button class="copy" data-copy="17304936">Copy</button>
+      </div>
+      <div class="detail">
+        <div><div class="k">Reference</div><div class="v small">Your job code, from my WhatsApp</div></div>
+        <span></span>
+      </div>
+      <p style="margin-top:14px;">If your bank asks, the account is held by Nicholas Pearson, trading as MrNickPearson.com. Monzo.</p>
+    </div>
+
+    <!-- 2. Card -->
+    <div class="card">
+      <span class="tag">If apps aren't your thing</span>
+      <h2>Card, or approve it in your bank</h2>
+      <p>One page, no account to make. Pick how many tools, type your reference, pay by card or choose <strong>Pay by Bank</strong> to approve it in your own banking app. Sharpening only, at &pound;8 a tool. Repairs and odd amounts, use the transfer above.</p>
+      <a class="btn" href="https://buy.stripe.com/cNi6oH4T84tj5vUdvA9oc00" target="_blank" rel="noopener">Pay by card or bank</a>
+      <p style="margin-top:14px;font-size:0.78rem;">Card payments cost me a little. Transfers cost nothing. If you can do the transfer, I'd rather you did.</p>
+    </div>
+
+    <!-- 3. Cash -->
+    <div class="card">
+      <span class="tag">Last resort</span>
+      <h2>Exact cash at the door</h2>
+      <p>If neither of those works for you, message me and we'll sort cash when you collect. Exact money only, I don't carry change. Never leave cash in the bin.</p>
+    </div>
+
+    <p class="note">Tools go back in the bin once payment has landed, from Tuesday midday. Questions, <a href="https://wa.me/447733323547?text=Hi%20Nicholas%2C%20a%20question%20about%20paying" target="_blank" rel="noopener">WhatsApp me</a> or email <a href="mailto:tools@mrnickpearson.com">tools@mrnickpearson.com</a>. I don't take calls.</p>
+  </div>
+</main>
+
+<footer>
+  <div class="container ft">
+    <span>&copy; 2026 Nick Pearson</span>
+    <div class="ft-links">
+      <a href="/">Hub</a>
+      <a href="/gardentools">Garden Tools</a>
+      <a href="/sculptures">Sculpture</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var html = document.documentElement, btn = document.getElementById('themeToggle');
+    var icon = document.getElementById('toggleIcon'), label = document.getElementById('toggleLabel'), KEY = 'np-theme';
+    function apply(t) { html.setAttribute('data-theme', t); icon.textContent = t === 'dark' ? '☀' : '☽'; label.textContent = t === 'dark' ? 'Light mode' : 'Dark mode'; try { localStorage.setItem(KEY, t); } catch (e) {} }
+    var initial = 'dark';
+    try { var s = localStorage.getItem(KEY); if (s) initial = s; else if (window.matchMedia('(prefers-color-scheme: light)').matches) initial = 'light'; } catch (e) {}
+    apply(initial);
+    btn.addEventListener('click', function () { apply(html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'); });
+  }());
+
+  document.querySelectorAll('.copy').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var text = b.getAttribute('data-copy');
+      function done() { b.textContent = 'Copied'; b.classList.add('done'); setTimeout(function () { b.textContent = 'Copy'; b.classList.remove('done'); }, 1800); }
+      if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(text).then(done).catch(function () { fallback(text); done(); }); }
+      else { fallback(text); done(); }
+    });
+  });
+  function fallback(text) {
+    var ta = document.createElement('textarea'); ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+    document.body.appendChild(ta); ta.select(); try { document.execCommand('copy'); } catch (e) {} document.body.removeChild(ta);
+  }
+</script>
+</body>
+</html>
