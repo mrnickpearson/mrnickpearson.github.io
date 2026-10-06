@@ -173,7 +173,7 @@
     .pgrid {
       display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 44px;
     }
-    .pc {
+    .pc { scroll-margin-top: 90px;
       background: var(--bg-surface); border: 1px solid var(--border); border-radius: 3px;
       overflow: hidden; display: flex; flex-direction: column;
       transition: border-color 0.25s, transform 0.25s;
@@ -482,7 +482,7 @@
 
     <div class="pgrid rv">
 
-      <div class="pc">
+      <div class="pc" id="scorpion">
         <div class="pc-img">
           <img src="https://static.wixstatic.com/media/7c5c84_b367fa37af80434aa9dd61002cab4c2a~mv2.jpg" alt="Scorpion sculpture with forceps legs" loading="lazy">
           <span class="pc-badge">One of one</span>
@@ -494,7 +494,7 @@
         </div>
       </div>
 
-      <div class="pc">
+      <div class="pc" id="super-dragonfly">
         <div class="pc-img">
           <img src="https://static.wixstatic.com/media/7c5c84_632bd2bc39c2415981fae17f9e0f37e2~mv2.jpg" alt="Super Dragonfly sculpture" loading="lazy">
           <span class="pc-badge">One of one</span>
@@ -506,7 +506,7 @@
         </div>
       </div>
 
-      <div class="pc">
+      <div class="pc" id="giraffe">
         <div class="pc-img">
           <img src="https://static.wixstatic.com/media/7c5c84_e6f09450cabe4eb7af728a8f60a673bc~mv2.jpg" alt="Giraffe steel sculpture" loading="lazy">
           <span class="pc-badge">One of one</span>
@@ -518,7 +518,7 @@
         </div>
       </div>
 
-      <div class="pc">
+      <div class="pc" id="super-butterfly">
         <div class="pc-img">
           <div class="pc-placeholder"><span>B</span><span>Photo coming</span></div>
           <span class="pc-badge">One of one</span>
@@ -530,7 +530,7 @@
         </div>
       </div>
 
-      <div class="pc">
+      <div class="pc" id="bizzy-bee">
         <div class="pc-img">
           <img src="https://static.wixstatic.com/media/7c5c84_63b03aee68f946a79637b20515eabc5e~mv2.jpg" alt="Bizzy Bee steel sculpture" loading="lazy">
           <span class="pc-badge">One of one</span>
@@ -542,7 +542,7 @@
         </div>
       </div>
 
-      <div class="pc">
+      <div class="pc" id="dragonfly-mini">
         <div class="pc-img">
           <img src="https://static.wixstatic.com/media/7c5c84_afdc79343c664954ba6eb93776267197~mv2.jpg" alt="Dragonfly Mini Bad Boys sculpture" loading="lazy">
           <span class="pc-badge">One of one</span>
@@ -554,7 +554,7 @@
         </div>
       </div>
 
-      <div class="pc">
+      <div class="pc" id="mechanica-fauna">
         <div class="pc-img">
           <img src="https://static.wixstatic.com/media/7c5c84_dca0b449c68c49078aa716274ca91067~mv2.jpg" alt="Mechanica Fauna limited edition sculpture" loading="lazy">
           <span class="pc-badge ltd">Edition of 10</span>
@@ -566,7 +566,7 @@
         </div>
       </div>
 
-      <div class="pc">
+      <div class="pc" id="sam-the-spider">
         <div class="pc-img">
           <img src="images/sc-sam-the-spider.jpg" alt="Sam the Spider, rope and steel, under UV" loading="lazy">
           <span class="pc-badge sold">Sold</span>
@@ -651,7 +651,7 @@
         <button class="pol-btn" onclick="togglePol(this)">Returns, refunds and your rights</button>
         <div class="pol-body"><div class="pol-body-in">
           <h5>Ready-made pieces</h5>
-          <p>Under the Consumer Contracts Regulations 2013 you can cancel an online order for a ready-made sculpture within <strong>14 days of receiving it</strong>, no reason needed. Email mrnickpearson@gmail.com within that window. Send it back in its original condition, well packed. Return postage is on you unless the piece arrived damaged or wasn't as described. Refunds go back to the original payment method within 14 days of the piece arriving back.</p>
+          <p>Under the Consumer Contracts Regulations 2013 you can cancel an online order for a ready-made sculpture within <strong>14 days of receiving it</strong>, no reason needed. Email art@mrnickpearson.com within that window. Send it back in its original condition, well packed. Return postage is on you unless the piece arrived damaged or wasn't as described. Refunds go back to the original payment method within 14 days of the piece arriving back.</p>
           <h5>Commissioned and bespoke work</h5>
           <p>The 14-day cancellation right <strong>does not apply</strong> to work made to your specification (Regulation 28(1)(b)). Deposit terms are confirmed in writing before anything gets cut.</p>
           <h5>Damage</h5>
@@ -665,7 +665,7 @@
         <button class="pol-btn" onclick="togglePol(this)">Privacy</button>
         <div class="pol-body"><div class="pol-body-in">
           <h5>Who runs this site</h5>
-          <p>Nick Pearson, sole trader, trading as Pearson Works and MrNickPearson.com, Newbury, Berkshire. Contact: mrnickpearson@gmail.com</p>
+          <p>Nick Pearson, sole trader, trading as Pearson Works and MrNickPearson.com, Newbury, Berkshire. Contact: art@mrnickpearson.com</p>
           <h5>What is collected and why</h5>
           <ul>
             <li>Name and email when you use a contact or order form, so a reply can be sent</li>
@@ -675,7 +675,7 @@
           <h5>Legal basis (UK GDPR)</h5>
           <p>Contract, for fulfilling orders. Legitimate interest, for answering enquiries.</p>
           <h5>Your rights</h5>
-          <p>You can ask to see, correct or delete anything held about you, or object to its use, at any time. Email mrnickpearson@gmail.com.</p>
+          <p>You can ask to see, correct or delete anything held about you, or object to its use, at any time. Email art@mrnickpearson.com.</p>
           <h5>How long it's kept</h5>
           <p>Order records for 7 years (HMRC). Enquiries for 12 months.</p>
           <h5>ICO registration</h5>
@@ -729,7 +729,7 @@
       <h2>Say hello</h2>
       <p class="lede">Buying, commissioning, or just curious. Every message gets a personal reply, usually within 24 hours.</p>
       <div class="ct-details">
-        <div class="ct-detail"><span class="k">Email</span><span class="v"><a href="mailto:mrnickpearson@gmail.com">mrnickpearson@gmail.com</a></span></div>
+        <div class="ct-detail"><span class="k">Email</span><span class="v"><a href="mailto:art@mrnickpearson.com">art@mrnickpearson.com</a></span></div>
         <div class="ct-detail"><span class="k">Workshop</span><span class="v">Newbury, Berkshire. Visits by appointment.</span></div>
         <div class="ct-detail"><span class="k">Instagram</span><span class="v"><a href="https://www.instagram.com/mrnickpearson" target="_blank" rel="noopener">@mrnickpearson</a></span></div>
       </div>
