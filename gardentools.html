@@ -170,10 +170,10 @@
 
     /* booking */
     .bk-wrap { max-width: 560px; margin: 0 auto; }
+    #book { margin-top: 36px; }
     .bk-close { display: none; background: none; border: 1px solid var(--border); color: var(--fg); font-family: 'Jost', sans-serif; font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; padding: 0 18px; min-height: 44px; margin-bottom: 18px; cursor: pointer; position: sticky; top: 12px; background-color: var(--bg); z-index: 2; }
     @media (max-width: 760px) {
-      #book.bk-full { position: fixed; inset: 0; z-index: 1000; background: var(--bg); overflow-y: auto; -webkit-overflow-scrolling: touch; padding: 14px 0 40px; }
-      #book.bk-full .container { padding: 0 16px; }
+      #book.bk-full { position: fixed; inset: 0; z-index: 1000; background: var(--bg); overflow-y: auto; -webkit-overflow-scrolling: touch; padding: 14px 16px 40px; }
       #book.bk-full .bk-close { display: inline-block; }
       body.bk-lock { overflow: hidden; }
     }
@@ -352,8 +352,9 @@
       <h2>From &pound;8 a tool</h2>
       <p class="lede">Sharpening is &pound;8 per tool, whatever it is. Simple repairs up to &pound;50, always quoted first.</p>
     </div>
-    <div class="plist rv" id="priceList">
-      <!-- rows generated from the SERVICES list in the script below -->
+    <div id="book">
+      <button class="bk-close" id="bkClose" type="button">&larr; Back to the page</button>
+      <div class="bk-wrap" id="bookWrap" aria-live="polite"></div>
     </div>
     <p class="price-note rv">A tool is one item: a pair of secateurs counts as one, a pair of shears counts as one. Anything not on the list, send a photo and ask.</p>
   </div>
@@ -361,13 +362,6 @@
 
 <hr class="rule">
 
-<!-- BOOK IN -->
-<section id="book">
-  <div class="container">
-    <button class="bk-close" id="bkClose" type="button">&larr; Back to the page</button>
-    <div class="bk-wrap" id="bookWrap" aria-live="polite"></div>
-  </div>
-</section>
 
 <hr class="rule">
 
@@ -577,20 +571,6 @@
     }
   }
   document.querySelectorAll('.js-wa').forEach(function (a) { wireWa(a, a.getAttribute('data-msg')); });
-
-  /* price list */
-  (function () {
-    var box = document.getElementById('priceList');
-    SERVICES.forEach(function (s) {
-      var row = document.createElement('div'); row.className = 'prow';
-      row.innerHTML = '<div><div class="prow-name">' + s.name + '</div><div class="prow-sub">' + s.sub + '</div></div>' +
-                      '<div class="prow-price">' + s.price + '</div>' +
-                      '<a class="prow-btn" href="#">Book in</a>';
-      box.appendChild(row);
-      var pb = row.querySelector('.prow-btn');
-      if (s.name === 'Something else') wireWa(pb, s.msg); else pb.setAttribute('href', '#book');
-    });
-  }());
 
   /* Formspree enquiry form (AJAX) */
   (function () {
