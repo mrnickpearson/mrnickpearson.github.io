@@ -168,6 +168,66 @@
     .ft a:hover { color: var(--accent); }
     .ft-links { display: flex; gap: 22px; flex-wrap: wrap; }
 
+    /* booking */
+    .bk-wrap { max-width: 560px; margin: 0 auto; }
+    .bk-prog { display: flex; gap: 6px; margin-bottom: 14px; }
+    .bk-prog i { flex: 1; height: 3px; background: var(--border); }
+    .bk-prog i.on { background: var(--accent); }
+    .bk-step { font-size: 0.66rem; letter-spacing: 0.26em; text-transform: uppercase; color: var(--accent); }
+    .bk-h { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 6vw, 2.6rem); line-height: 1.05; margin: 8px 0 10px; }
+    .bk-p { font-size: 0.92rem; color: var(--fg-muted); line-height: 1.5; }
+    .bk-p strong { font-weight: 500; color: var(--fg); }
+    .bk-row { display: flex; align-items: center; gap: 10px; padding: 12px 10px; margin: 0 -10px; border-top: 1px solid var(--border); }
+    .bk-row.on { background: rgba(192,122,40,0.12); }
+    .bk-txt { flex: 1; min-width: 0; }
+    .bk-name { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; line-height: 1.1; }
+    .bk-sub { font-size: 0.8rem; color: var(--fg-muted); margin-top: 2px; }
+    .bk-ctr { display: flex; align-items: center; gap: 8px; flex: none; }
+    .bk-ctr button { width: 44px; height: 44px; border-radius: 4px; border: 1px solid var(--input-border); background: transparent; color: var(--fg); font-family: 'Jost', sans-serif; font-size: 1.4rem; line-height: 1; padding: 0; cursor: pointer; }
+    .bk-ctr button.plus { border-color: var(--accent); }
+    .bk-ctr button.plus.on { background: var(--accent); color: #080808; }
+    .bk-ctr button:disabled { opacity: 0.35; cursor: default; }
+    .bk-n { min-width: 26px; text-align: center; font-family: 'Jost', sans-serif; font-size: 1.6rem; color: var(--fg-muted); }
+    .bk-n.on { color: var(--accent); font-weight: 500; }
+    .bk-free { font-family: 'Jost', sans-serif; font-size: 0.8rem; color: var(--accent); border: 1px solid var(--accent); border-radius: 10px; padding: 1px 9px; margin-left: 8px; vertical-align: middle; }
+    .bk-box { border: 1px dashed rgba(192,122,40,0.6); border-radius: 4px; padding: 14px; margin-top: 14px; display: flex; flex-direction: column; gap: 10px; }
+    .bk-tot { background: var(--bg-surface); border: 1px solid var(--border); border-radius: 4px; padding: 16px 18px; display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 18px; }
+    .bk-tot .big { font-family: 'Jost', sans-serif; font-weight: 400; font-size: 2rem; line-height: 1; }
+    .bk-tot small { display: block; font-size: 0.8rem; color: var(--fg-muted); margin-top: 3px; }
+    .bk-card { background: var(--bg-surface); border: 1px solid var(--border); border-radius: 4px; padding: 18px; margin-top: 14px; display: flex; flex-direction: column; gap: 10px; }
+    .bk-card.dash { border-style: dashed; border-color: rgba(192,122,40,0.6); }
+    .bk-card-t { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; line-height: 1.1; }
+    .bk-caps { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--fg-muted); }
+    .bk-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+    .chip { min-height: 44px; padding: 0 14px; border-radius: 22px; border: 1px solid var(--input-border); background: transparent; color: var(--fg); font-family: 'Jost', sans-serif; font-size: 0.9rem; cursor: pointer; }
+    .chip.on { background: var(--accent); border-color: var(--accent); color: #080808; font-weight: 500; }
+    .bk-rep { min-height: 44px; padding: 0 14px; border-radius: 4px; border: 1px dashed var(--input-border); background: transparent; color: var(--fg); font-family: 'Jost', sans-serif; font-size: 0.9rem; text-align: left; cursor: pointer; }
+    .bk-rep.on { border: 1px solid var(--accent); background: rgba(192,122,40,0.16); font-weight: 500; }
+    .bk-copy { min-height: 44px; padding: 0 14px; border-radius: 4px; border: 1px solid var(--accent); background: transparent; color: var(--accent); font-family: 'Jost', sans-serif; font-size: 0.74rem; letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer; }
+    .bk-in { width: 100%; min-height: 44px; padding: 0 14px; border-radius: 4px; border: 1px solid var(--input-border); background: var(--input-bg); color: var(--fg); font-family: 'Jost', sans-serif; font-size: 16px; font-weight: 300; -webkit-appearance: none; }
+    .bk-in:focus { outline: none; border-color: var(--accent); }
+    .bk-lbl { display: block; font-size: 0.9rem; line-height: 1.4; color: var(--fg); }
+    .bk-lbl .req { font-size: 0.78rem; color: var(--fg-muted); }
+    .bk-lbl .opt { display: block; font-size: 0.78rem; color: var(--fg-muted); margin-top: 2px; }
+    .bk-f { display: flex; flex-direction: column; gap: 6px; }
+    .bk-ticks { border: 1px solid var(--input-border); border-radius: 4px; padding: 14px; display: flex; flex-direction: column; gap: 10px; background: var(--bg-raised); }
+    .bk-tick { min-height: 48px; display: flex; align-items: center; gap: 12px; border: 1px solid var(--input-border); border-radius: 4px; background: transparent; color: var(--fg); font-family: 'Jost', sans-serif; font-size: 0.95rem; padding: 6px 12px 6px 6px; text-align: left; cursor: pointer; }
+    .bk-tick.on { border-color: var(--accent); background: rgba(192,122,40,0.12); }
+    .bk-cb { width: 34px; height: 34px; flex: none; border-radius: 3px; border: 1px solid var(--input-border); display: flex; align-items: center; justify-content: center; }
+    .bk-tick.on .bk-cb { background: var(--accent); border-color: var(--accent); color: #080808; }
+    .bk-sum { background: var(--bg-raised); border: 1px solid var(--border); border-radius: 4px; padding: 14px 16px; font-size: 0.9rem; line-height: 1.6; display: flex; flex-direction: column; gap: 4px; }
+    .bk-actions { display: flex; gap: 10px; margin-top: 18px; }
+    .bk-actions .btn { flex: 1; min-height: 52px; }
+    .bk-hint { font-size: 0.85rem; color: var(--fg-muted); margin-top: 12px; }
+    .bk-err { font-size: 0.88rem; color: #d9825b; margin-top: 12px; }
+    .bk-link { background: none; border: none; color: var(--accent); font-family: 'Jost', sans-serif; font-size: 0.85rem; text-decoration: underline; cursor: pointer; padding: 0; }
+    .bk-ref { font-family: 'Jost', sans-serif; font-weight: 500; font-size: 2.6rem; line-height: 1; letter-spacing: 0.1em; }
+    .bk-bul { list-style: none; font-size: 0.9rem; color: var(--fg-muted); display: flex; flex-direction: column; gap: 6px; }
+    .bk-bul li::before { content: "\2022"; color: var(--accent); margin-right: 10px; }
+    .bk-steprow { display: flex; gap: 14px; align-items: flex-start; }
+    .bk-num { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; line-height: 1; color: var(--accent); width: 22px; flex: none; }
+    @media (max-width: 760px) { .bk-tot { flex-direction: column; align-items: stretch; } }
+
     .rv { opacity: 0; transform: translateY(16px); transition: opacity 0.7s ease, transform 0.7s ease; }
     .rv.in { opacity: 1; transform: none; }
 
@@ -207,6 +267,7 @@
       <span class="wordmark-sub">Garden Tools</span>
     </a>
     <nav class="main" aria-label="Page sections">
+      <a href="#book">Book in</a>
       <a href="#how">How it works</a>
       <a href="#prices">Prices</a>
       <a href="#photo">Send a photo</a>
@@ -221,6 +282,7 @@
 
 <div class="mobile-menu" id="mobileMenu">
   <button class="close-x" id="menuClose" aria-label="Close menu">&times;</button>
+  <a href="#book">Book in</a>
   <a href="#how">How it works</a>
   <a href="#prices">Prices</a>
   <a href="#photo">Send a photo</a>
@@ -237,10 +299,7 @@
     <h1>Garden Tools</h1>
     <p>Hand tools sharpened once a week. Drop them off, pick them up sharp.</p>
     <div class="hero-cta">
-      <a class="btn btn--wa js-wa" data-msg="Hi Nick, I'd like to book some tools in for the next sharpening day." href="#">
-        <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 1.8a8.2 8.2 0 1 1-4.2 15.3l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 0 1 12 3.8zm-3 4.4c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.2 5 4.4 2.5 1 3 .8 3.5.7.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.1-1.4l-.5-.3-1.9-.9c-.2-.1-.4-.1-.6.1l-.9 1.1c-.2.2-.3.2-.6.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4 0-.5.1-.7l.5-.6.3-.5v-.5l-.9-2.1c-.2-.5-.4-.5-.6-.5h-.6z"/></svg>
-        Book tools in
-      </a>
+      <a class="btn btn--solid" href="#book">Book tools in</a>
       <a href="#how" class="btn btn--outline">How it works</a>
     </div>
   </div>
@@ -290,6 +349,15 @@
       <!-- rows generated from the SERVICES list in the script below -->
     </div>
     <p class="price-note rv">A tool is one item: a pair of secateurs counts as one, a pair of shears counts as one. Anything not on the list, send a photo and ask.</p>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- BOOK IN -->
+<section id="book">
+  <div class="container">
+    <div class="bk-wrap" id="bookWrap" aria-live="polite"></div>
   </div>
 </section>
 
@@ -442,7 +510,6 @@
     { name: "Spades and forks",         sub: "Spade edge reground, fork tines straightened", price: "from £8", msg: "Hi Nick, I'd like my spade sorted." },
     { name: "Axes and hatchets",        sub: "Edge reground and honed",            price: "from £8", msg: "Hi Nick, I'd like my axe sharpened." },
     { name: "Knives",                   sub: "Garden, pruning and pocket knives",  price: "from £8", msg: "Hi Nick, I'd like a knife sharpened." },
-    { name: "Simple repairs",           sub: "Handles, pivots, springs, rivets",   price: "up to £50", msg: "Hi Nick, I've got a tool that needs a repair." },
     { name: "Something else",           sub: "Send a photo and ask",               price: "ask",           msg: "Hi Nick, I've got a tool that's not on your list." }
   ];
 
@@ -512,7 +579,8 @@
                       '<div class="prow-price">' + s.price + '</div>' +
                       '<a class="prow-btn" href="#">Book in</a>';
       box.appendChild(row);
-      wireWa(row.querySelector('.prow-btn'), s.msg);
+      var pb = row.querySelector('.prow-btn');
+      if (s.name === 'Something else') wireWa(pb, s.msg); else pb.setAttribute('href', '#book');
     });
   }());
 
@@ -526,6 +594,298 @@
         .catch(function () { alert('Could not send. Check your connection and try again.'); });
     });
   }());
+
+  /* ══════════════════════════════════════════════════════════════════════
+     BOOKING. Three screens, then a confirmation page.
+     Sends to the Google Form (sheet row) first, then Formspree (email).
+     ══════════════════════════════════════════════════════════════════════ */
+  var GFORM = 'https://docs.google.com/forms/d/e/1FAIpQLScfmujb48mfXKPJnETeFxRaiQdJFM5YzV3z414Scen44BTD8w/formResponse';
+  var GE = { ref:'entry.131965812', fn:'entry.1848992664', sn:'entry.2040908146', mb:'entry.250880734', em:'entry.666389042', pc:'entry.811330265', batch:'entry.2004076842', ready:'entry.1683952793', tools:'entry.191651772', count:'entry.315454206', sharp:'entry.2088471767', rep:'entry.1058844844', al:'entry.219197692', hd:'entry.1502547670', rem:'entry.1654185939', int:'entry.638141842', pho:'entry.125014681', nl:'entry.1912093684', don:'entry.1027343340' };
+  var FORMSPREE = 'https://formspree.io/f/mzedpyvv';
+  var BTOOLS = [
+    { id:'sec', name:'Secateurs and snips', sub:'Bypass or anvil' },
+    { id:'shr', name:'Shears and hedge shears', sub:'Both blades, pivot checked' },
+    { id:'lop', name:'Loppers', sub:'Bypass or anvil, any length' },
+    { id:'hoe', name:'Hoes and edging irons', sub:'Edge reground' },
+    { id:'spd', name:'Spades and forks', sub:'Spade edge reground, fork tines straightened' },
+    { id:'axe', name:'Axes and hatchets', sub:'Edge reground and honed' },
+    { id:'kni', name:'Knives', sub:'Garden, pruning and pocket knives' }
+  ];
+  var CHIPS = ['Blunt', 'Very rusty', 'Pivot stiff', 'Handle loose', 'Handle cracked', 'Chipped edge'];
+  var TICKS = ['Remind me when a sharpening day is coming up', 'Interested in welding repairs', 'Interested in art sculptures', 'Interested in old tool restoration', 'Happy for photos of my tools on the site or social', 'Send me the newsletter'];
+  var ALLOT = ['No allotment', 'Wash Common', 'West Mills', 'Dairy Farm', 'Southbys', 'One Tree Park', 'Parsons', 'Other allotment'];
+  var HEARD = ['Pick one', 'Allotment noticeboard', 'Word of mouth', 'Google', 'Social media', 'Flyer', 'Something else'];
+  var B = { screen: 1, counts: {}, donate: 0, donateNote: '', items: {}, err: '', last: null,
+            d: { fn:'', sn:'', mb:'', em:'', pc:'', al:'No allotment', hd:'Pick one', ticks:[0,0,0,0,0,0] } };
+
+  function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[c]; }); }
+  function cnt(id) { return B.counts[id] || 0; }
+  function totalTools() { var n = 0; BTOOLS.forEach(function (t) { n += cnt(t.id); }); return n; }
+  function keysList() { var out = []; BTOOLS.forEach(function (t) { var n = cnt(t.id); for (var i = 0; i < n; i++) out.push({ key: t.id + '-' + i, t: t, i: i, n: n }); }); return out; }
+  function syncItems() {
+    var ks = keysList(), names = ks.map(function (x) { return x.key; });
+    ks.forEach(function (x) { if (!B.items[x.key]) B.items[x.key] = { chips: [], rep: false, notes: '', apart: '' }; });
+    Object.keys(B.items).forEach(function (k) { if (names.indexOf(k) < 0) delete B.items[k]; });
+  }
+  function repairCount() { var n = 0; keysList().forEach(function (x) { if (B.items[x.key] && B.items[x.key].rep) n++; }); return n; }
+  function plural(n, one, many) { return n + ' ' + (n === 1 ? one : many); }
+  function yn(on) { return on ? 'yes' : 'no'; }
+  function tickOn(i) { return !!B.d.ticks[i]; }
+  function interestedList() { var l = []; if (tickOn(1)) l.push('welding repairs'); if (tickOn(2)) l.push('sculpture'); if (tickOn(3)) l.push('old tool restoration'); return l; }
+  function toolLines() {
+    return keysList().map(function (x, idx) {
+      var it = B.items[x.key];
+      var base = x.t.name + (x.n > 1 ? ' (' + (x.t.id === 'sec' ? 'pair ' : '') + (x.i + 1) + ' of ' + x.n + ')' : '');
+      var det = it.chips.slice();
+      if (it.apart) det.push(it.apart);
+      if (it.notes) det.push(it.notes);
+      if (it.rep) det.push('REPAIR QUOTE WANTED');
+      return (idx + 1) + '. ' + base + (det.length ? ': ' + det.join(', ') : '');
+    });
+  }
+  function batchInfo(now) {
+    var d = new Date(now), day = d.getDay(), add = (7 - day) % 7, late = false;
+    if (day === 0) { var cut = new Date(d); cut.setHours(15, 30, 0, 0); if (d >= cut) { add = 7; late = true; } }
+    var sun = new Date(d.getFullYear(), d.getMonth(), d.getDate() + add);
+    var ready = new Date(sun.getFullYear(), sun.getMonth(), sun.getDate() + 2);
+    return { sunday: sun, ready: ready, late: late };
+  }
+  function fmtDay(d) { return d.toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'short' }); }
+  function makeRef(fn, sn, ready) {
+    var chars = 'ACDEFGHJKMNPQRTUVWXY3467';
+    function pick() { return chars.charAt(Math.floor(Math.random() * chars.length)); }
+    var ini = (fn.trim().charAt(0) + sn.trim().charAt(0)).toUpperCase();
+    var dd = ('0' + ready.getDate()).slice(-2);
+    return ini + dd + 'ACDEFGHJKMNP'.charAt(ready.getMonth()) + '-' + pick() + pick();
+  }
+  function validate() {
+    var d = B.d;
+    if (!d.fn.trim() || !d.sn.trim()) return 'Please add your forename and surname.';
+    if (!d.mb.trim()) return 'Please add a mobile number.';
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(d.em.trim())) return 'Please check your email address.';
+    return '';
+  }
+  function bookingText(ref, batch, ready) {
+    var d = B.d, n = totalTools(), rep = repairCount(), out = [];
+    out.push('Hello Nicholas,', 'Booking for the next sharpening day.', '', 'Ref: ' + ref, 'Name: ' + d.fn.trim() + ' ' + d.sn.trim(), 'Mobile: ' + d.mb.trim(), 'Email: ' + d.em.trim());
+    if (d.pc.trim()) out.push('Postcode: ' + d.pc.trim());
+    if (n) out = out.concat(['', 'Tools (' + n + '):'], toolLines());
+    if (B.donate) out.push('', 'Donated for sculpture (' + B.donate + '): ' + (B.donateNote.trim() || 'not described'));
+    if (n) { out.push('', 'Sharpening: ' + plural(n, 'tool', 'tools') + ', £' + (n * 8)); if (rep) out.push('Repairs to quote: ' + rep); }
+    out.push('', 'Drop off by: ' + batch + ', 4pm', 'Ready from: ' + ready + ', midday', '',
+             'Allotment: ' + d.al + ' | Heard: ' + d.hd + ' | Reminders: ' + yn(tickOn(0)) + ' | Photos: ' + yn(tickOn(4)) + ' | Newsletter: ' + yn(tickOn(5)) +
+             (interestedList().length ? ' | Also interested: ' + interestedList().join(', ') : ''));
+    return out.join('\n');
+  }
+  function progress(n) { return '<div class="bk-prog">' + [1, 2, 3].map(function (i) { return '<i class="' + (i <= n ? 'on' : '') + '"></i>'; }).join('') + '</div>'; }
+  function step(n, html) { return '<div class="bk-steprow"><span class="bk-num">' + n + '</span><div class="bk-p" style="color:var(--fg)">' + html + '</div></div>'; }
+
+  function s1() {
+    var n = totalTools(), dn = B.donate, rows = '';
+    BTOOLS.forEach(function (t) {
+      var c = cnt(t.id);
+      rows += '<div class="bk-row' + (c ? ' on' : '') + '"><div class="bk-txt"><div class="bk-name">' + t.name + '</div><div class="bk-sub">' + t.sub + '</div></div>' +
+              '<div class="bk-ctr"><button data-act="dec" data-id="' + t.id + '" aria-label="One fewer ' + esc(t.name) + '"' + (c ? '' : ' disabled') + '>-</button>' +
+              '<span class="bk-n' + (c ? ' on' : '') + '">' + c + '</span>' +
+              '<button class="plus' + (c ? ' on' : '') + '" data-act="inc" data-id="' + t.id + '" aria-label="One more ' + esc(t.name) + '">+</button></div></div>';
+    });
+    var don = '<div class="bk-box"><div class="bk-row" style="margin:0;padding:0;border:0"><div class="bk-txt"><div class="bk-name">Beyond saving? <span class="bk-free">£0</span></div>' +
+              '<div class="bk-sub">Donate it and I\'ll give it a second life as a sculpture. No charge.</div></div>' +
+              '<div class="bk-ctr"><button data-act="ddec" aria-label="One fewer donated tool"' + (dn ? '' : ' disabled') + '>-</button>' +
+              '<span class="bk-n' + (dn ? ' on' : '') + '">' + dn + '</span>' +
+              '<button class="plus' + (dn ? ' on' : '') + '" data-act="dinc" aria-label="Donate one tool">+</button></div></div>' +
+              (dn ? '<p class="bk-p">Not sharpened and not charged, so your total doesn\'t change. Bring them along with the rest: there\'s a clearly labelled <strong>sculpture donations bin</strong> next to the drop-off bin.</p>' : '') + '</div>';
+    var other = '<div class="bk-row" style="margin-top:14px"><div class="bk-txt"><div class="bk-name">Something else</div><div class="bk-sub">Send a photo and ask</div></div>' +
+                '<a class="btn btn--outline" style="min-height:44px;padding:0 16px;font-size:0.7rem" href="' + waHref("Hi Nick, I've got a tool that's not on your list.") + '" target="_blank" rel="noopener">Message me</a></div>';
+    var tot = '<div class="bk-tot"><div><div class="big">£' + (n * 8) + '</div><small>' + plural(n, 'tool', 'tools') + '</small>' +
+              (dn ? '<small>' + plural(dn, 'tool', 'tools') + ' donated for sculpture, free</small>' : '') + '<small>Repairs quoted separately</small></div>' +
+              '<button class="btn btn--solid" data-act="next"' + ((n + dn) ? '' : ' disabled') + '>Next</button></div>';
+    return progress(1) + '<div class="bk-step">Step 1 of 3</div><h3 class="bk-h">What needs sharpening?</h3>' +
+           '<p class="bk-p">Tap + for each tool you\'ve got, and - if you tap one too many. £8 a tool. A pair of secateurs counts as one.</p>' +
+           '<div style="margin-top:18px">' + rows + '</div>' + don + other +
+           '<p class="bk-p" style="margin-top:14px">Needs a repair? You\'ll be asked on the next screen, tool by tool.</p>' +
+           ((n + dn) ? '' : '<p class="bk-hint">Tap + on a tool to start.</p>') + tot;
+  }
+
+  function s2() {
+    syncItems();
+    var cards = '';
+    keysList().forEach(function (x) {
+      var it = B.items[x.key];
+      var sub = x.n > 1 ? (x.t.id === 'sec' ? 'Pair ' : '') + (x.i + 1) + ' of ' + x.n : '1 of 1';
+      cards += '<div class="bk-card"><div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px"><div class="bk-card-t">' + x.t.name + '</div><div class="bk-caps">' + sub + '</div></div>' +
+        (x.n > 1 ? '<label class="bk-lbl">How can I tell this one from the others?<span class="opt">(optional, but helpful &#128522;&#128077;)</span></label>' +
+                   '<input class="bk-in" data-field="apart" data-key="' + x.key + '" placeholder="e.g. red handles, or Felco" value="' + esc(it.apart) + '">' : '') +
+        '<div class="bk-chips">' + CHIPS.map(function (c, j) {
+          var on = it.chips.indexOf(c) > -1;
+          return '<button class="chip' + (on ? ' on' : '') + '" data-act="chip" data-key="' + x.key + '" data-chip="' + j + '" aria-pressed="' + on + '">' + c + '</button>';
+        }).join('') + '</div>' +
+        '<button class="bk-rep' + (it.rep ? ' on' : '') + '" data-act="rep" data-key="' + x.key + '" aria-pressed="' + it.rep + '">' + (it.rep ? 'Ticked: needs a repair, quote me first' : "Needs a repair? Tap and I'll quote first") + '</button>' +
+        '<input class="bk-in" data-field="notes" data-key="' + x.key + '" placeholder="Anything else? e.g. snapped spring" value="' + esc(it.notes) + '">' +
+        (x.n > 1 && x.i === 0 ? '<button class="bk-copy" data-act="copy" data-key="' + x.key + '">Copy these ticks to the other ' + (x.n - 1) + '</button>' : '') + '</div>';
+    });
+    var dc = B.donate ? '<div class="bk-card dash"><div class="bk-card-t">Donated for sculpture</div><div class="bk-caps">' + plural(B.donate, 'tool', 'tools') + '</div>' +
+             '<p class="bk-p">These aren\'t sharpened and they\'re not charged, so there\'s nothing to tick. Bring them along with the rest: there\'s a clearly labelled <strong>sculpture donations bin</strong> next to the drop-off bin.</p>' +
+             '<label class="bk-lbl">What are they?<span class="opt">(optional, but helpful &#128522;&#128077;)</span></label>' +
+             '<input class="bk-in" data-field="donNote" placeholder="e.g. rusted spade, two old chisels" value="' + esc(B.donateNote) + '"></div>' : '';
+    var n = totalTools(), rep = repairCount();
+    var repLine = rep ? plural(rep, 'repair', 'repairs') + ' to quote' : 'Repairs quoted separately';
+    var tot = '<div class="bk-tot"><div><div class="big">£' + (n * 8) + '</div><small>' + plural(n, 'tool', 'tools') + '</small><small>' + repLine + '</small></div>' +
+              '<div style="display:flex;gap:8px"><button class="btn btn--outline" data-act="back">Back</button><button class="btn btn--solid" data-act="next">Next</button></div></div>';
+    return progress(2) + '<div class="bk-step">Step 2 of 3</div><h3 class="bk-h">Tell me about each tool</h3>' +
+           '<p class="bk-p">Tap anything that applies. It all helps, but none of it is compulsory.</p>' + cards + dc + tot;
+  }
+
+  function s3() {
+    var info = batchInfo(new Date()), batch = fmtDay(info.sunday), ready = fmtDay(info.ready), d = B.d;
+    var late = info.late ? '<p class="bk-p" style="margin-top:10px;padding-top:10px;border-top:1px solid var(--border);color:var(--fg)">You\'ve just missed this week\'s cutoff, so your tools go into next week\'s batch. Book a bit earlier next time, thank you.</p>' : '';
+    function req(id, label, type, extra) {
+      return '<div class="bk-f"><label class="bk-lbl" for="f-' + id + '">' + label + ' <span class="req">(required)</span></label>' +
+             '<input class="bk-in" id="f-' + id + '" data-field="' + id + '" type="' + type + '" value="' + esc(d[id]) + '"' + (extra || '') + '></div>';
+    }
+    function opt(id, label, ctrl) {
+      return '<div class="bk-f"><label class="bk-lbl" for="f-' + id + '">' + label + '<span class="opt">(optional, but helpful &#128522;&#128077;)</span></label>' + ctrl + '</div>';
+    }
+    function sel(id, list, val) {
+      return '<select class="bk-in" id="f-' + id + '" data-field="' + id + '">' + list.map(function (o) { return '<option' + (o === val ? ' selected' : '') + '>' + esc(o) + '</option>'; }).join('') + '</select>';
+    }
+    var ticks = TICKS.map(function (l, i) {
+      var on = tickOn(i);
+      return '<button class="bk-tick' + (on ? ' on' : '') + '" data-act="tick" data-i="' + i + '" aria-pressed="' + on + '"><span class="bk-cb">' + (on ? '&#10003;' : '') + '</span><span>' + esc(l) + '</span></button>';
+    }).join('');
+    var n = totalTools(), rep = repairCount();
+    var lines = toolLines().map(function (l) { return '<div>' + esc(l) + '</div>'; }).join('');
+    var sum = '<div class="bk-sum">' + (n ? lines : '<div>No tools to sharpen</div>') +
+              (B.donate ? '<div>Donated for sculpture: ' + plural(B.donate, 'tool', 'tools') + ', free</div>' : '') +
+              '<div style="border-top:1px solid var(--border);margin-top:8px;padding-top:8px;display:flex;justify-content:space-between;align-items:baseline"><span>' +
+              plural(n, 'tool', 'tools') + (rep ? ', ' + rep + ' to quote' : '') + '</span><span style="font-family:Jost,sans-serif;font-size:1.8rem;line-height:1">£' + (n * 8) + '</span></div></div>';
+    var err = B.err ? '<p class="bk-err">' + esc(B.err) + '</p>' : '';
+    return progress(3) + '<div class="bk-step">Step 3 of 3</div><h3 class="bk-h">Who\'s it for?</h3>' +
+      '<p class="bk-p">So I know whose tools are whose, and where to send the bin locations.</p>' +
+      '<div class="bk-card"><div class="bk-caps">Booking into</div><div class="bk-card-t">' + batch + '</div>' +
+      '<p class="bk-p">Drop off in the drop-off bin by 4pm. Ready in the collection bin from ' + ready + ', midday.</p>' + late + '</div>' +
+      '<div class="bk-card">' +
+        req('fn', 'Forename', 'text', ' autocomplete="given-name"') +
+        req('sn', 'Surname', 'text', ' autocomplete="family-name"') +
+        req('mb', 'Mobile', 'tel', ' autocomplete="tel" placeholder="The number you\'ll WhatsApp me from"') +
+        req('em', 'Email', 'email', ' autocomplete="email"') +
+      '</div>' +
+      '<h3 class="bk-h" style="font-size:1.6rem;margin-top:22px">A bit more about you</h3>' +
+      '<div class="bk-card">' +
+        opt('pc', 'Postcode', '<input class="bk-in" id="f-pc" data-field="pc" type="text" value="' + esc(d.pc) + '" autocomplete="postal-code">') +
+        opt('al', 'Do you have an allotment?', sel('al', ALLOT, d.al)) +
+        opt('hd', 'How did you hear about me?', sel('hd', HEARD, d.hd)) +
+        '<div class="bk-ticks"><div class="bk-p">Tick anything you\'d like, or leave them all blank:</div>' + ticks + '</div>' +
+      '</div>' +
+      '<div class="bk-card dash"><div class="bk-card-t" style="font-size:1.3rem">Before you drop off</div>' +
+      '<p class="bk-p">Take a photo of your tools before they go in the drop-off bin. It\'s your before shot, and I take one when I pick them up.</p></div>' +
+      '<div class="bk-card"><div class="bk-card-t" style="font-size:1.3rem">Your booking</div>' + sum + '</div>' + err +
+      '<div class="bk-actions"><button class="btn btn--outline" data-act="back">Back</button><button class="btn btn--solid" id="bkSend" data-act="send">Send booking</button></div>' +
+      '<p class="bk-p" style="margin-top:14px">Prefer email? <button class="bk-link" data-act="emailonly">Send this booking by email instead</button>. Your details are used to do the job and send you the bin locations, nothing else. Reminders and the newsletter only if you ticked them.</p>';
+  }
+
+  function conf() {
+    var L = B.last;
+    return '<div class="bk-step">Booked in</div><h3 class="bk-h">Thank you, ' + esc(L.first) + '</h3>' +
+      '<p class="bk-p">' + (L.emailOnly ? 'Your booking has gone to me by email, and it\'s in my sheet.' : 'Your booking is safe. One more tap and I\'ll have it on WhatsApp too.') + '</p>' +
+      (L.emailOnly || !L.wa ? '' : '<a class="btn btn--wa" style="width:100%;margin-top:18px;min-height:60px" href="' + esc(L.wa) + '" target="_blank" rel="noopener">Open WhatsApp and send it</a>') +
+      '<div class="bk-card" style="text-align:center;align-items:center"><div class="bk-caps">Your reference</div><div class="bk-ref">' + esc(L.ref) + '</div>' +
+      '<ul class="bk-bul" style="text-align:left;width:100%"><li>Write it on the tag, or on the bag if you\'re dropping off several tools.</li><li>Add this reference to your bank payment.</li></ul></div>' +
+      '<div class="bk-card"><div class="bk-card-t">What happens next</div>' +
+        step(1, 'Photograph your tools, put them in one bag and write <strong>' + esc(L.ref) + '</strong> on its tag. Bags, tags and a marker are in a box next to the drop-off bin.') +
+        step(2, 'Put them in the <strong>drop-off bin</strong> by ' + esc(L.batch) + ', 4pm.' + (L.don ? ' Tools for sculpture go loose in the clearly labelled <strong>sculpture donations bin</strong> next to it, no bag or tag needed.' : '') + ' Where the bins are comes by WhatsApp once you\'ve sent your booking.') +
+        step(3, 'I sharpen them Sunday evening and Monday.' + (L.rep ? ' Anything needing a repair gets a price by WhatsApp first.' : '')) +
+        step(4, 'From ' + esc(L.ready) + ', midday, once you\'ve paid, they\'re in the <strong>collection bin</strong>.') +
+      '</div>' +
+      '<div class="bk-tot"><div><div class="big">£' + L.total + '</div><small>' + esc(L.countText) + '</small>' +
+        (L.don ? '<small>Plus ' + plural(L.don, 'tool', 'tools') + ' donated for sculpture, thank you</small>' : '') + '</div>' +
+        '<a class="btn btn--outline" href="/pay">See how to pay</a></div>' +
+      '<p class="bk-p" style="margin-top:14px">Message, don\'t call. I don\'t answer numbers I don\'t know. A copy of this booking has gone to ' + esc(L.email) + '.</p>';
+  }
+
+  function render() {
+    var w = document.getElementById('bookWrap');
+    w.innerHTML = B.screen === 1 ? s1() : B.screen === 2 ? s2() : B.screen === 3 ? s3() : conf();
+  }
+
+  function send(emailOnly) {
+    var err = validate();
+    B.err = err;
+    if (err) { render(); return; }
+    var info = batchInfo(new Date()), batch = fmtDay(info.sunday), ready = fmtDay(info.ready);
+    var d = B.d, ref = makeRef(d.fn, d.sn, info.ready), n = totalTools(), rep = repairCount(), total = n * 8;
+    var msg = bookingText(ref, batch, ready);
+    var gb = new URLSearchParams();
+    function put(k, v) { gb.append(GE[k], v); }
+    put('ref', ref); put('fn', d.fn.trim()); put('sn', d.sn.trim()); put('mb', d.mb.trim()); put('em', d.em.trim()); put('pc', d.pc.trim());
+    put('batch', batch); put('ready', ready);
+    var toolsTxt = toolLines();
+    if (B.donate) toolsTxt.push('Donated for sculpture (' + B.donate + '): ' + (B.donateNote.trim() || 'not described'));
+    put('tools', toolsTxt.join('\n')); put('count', String(n)); put('sharp', '£' + total); put('rep', String(rep));
+    put('al', d.al); put('hd', d.hd); put('rem', yn(tickOn(0))); put('int', interestedList().join(', '));
+    put('pho', yn(tickOn(4))); put('nl', yn(tickOn(5))); put('don', String(B.donate));
+    var fd = new FormData();
+    fd.append('_subject', 'GARDEN TOOLS BOOKING - ' + ref + ' - ' + d.fn.trim() + ' ' + d.sn.trim() + ' - ' + plural(n, 'tool', 'tools') + ' - £' + total);
+    fd.append('_replyto', d.em.trim()); fd.append('reference', ref); fd.append('name', d.fn.trim() + ' ' + d.sn.trim());
+    fd.append('email', d.em.trim()); fd.append('mobile', d.mb.trim()); fd.append('message', msg);
+    var btn = document.getElementById('bkSend'); if (btn) { btn.disabled = true; btn.textContent = 'Sending...'; }
+    /* Both posts go out together. Sent if either lands, so a failed email alert never
+       makes the customer resend and create a second sheet row. */
+    var sheetOk = fetch(GFORM, { method: 'POST', mode: 'no-cors', body: gb })
+      .then(function () { return true; }, function () { return false; });
+    var mailOk = fetch(FORMSPREE, { method: 'POST', body: fd, headers: { 'Accept': 'application/json' } })
+      .then(function (r) { return r.ok; }, function () { return false; });
+    Promise.all([sheetOk, mailOk])
+      .then(function (res) { if (!res[0] && !res[1]) throw new Error('send'); })
+      .then(function () {
+        B.last = { ref: ref, first: d.fn.trim(), total: total, n: n, don: B.donate, rep: rep, batch: batch, ready: ready,
+                   email: d.em.trim(), wa: WHATSAPP_NUMBER ? waHref(msg) : '', emailOnly: !!emailOnly,
+                   countText: plural(n, 'tool', 'tools') + ', repairs quoted first' };
+        B.screen = 4; B.err = ''; render();
+        document.getElementById('book').scrollIntoView({ behavior: 'smooth' });
+      })
+      .catch(function () {
+        B.err = 'Could not send. Check your connection and try again, or WhatsApp me instead.';
+        render();
+      });
+  }
+
+  var wrap = document.getElementById('bookWrap');
+  wrap.addEventListener('click', function (e) {
+    var t = e.target.closest('[data-act]');
+    if (!t || t.disabled) return;
+    var a = t.getAttribute('data-act'), id = t.getAttribute('data-id'), key = t.getAttribute('data-key');
+    B.err = '';
+    if (a === 'inc') B.counts[id] = Math.min(30, cnt(id) + 1);
+    else if (a === 'dec') B.counts[id] = Math.max(0, cnt(id) - 1);
+    else if (a === 'dinc') B.donate = Math.min(30, B.donate + 1);
+    else if (a === 'ddec') B.donate = Math.max(0, B.donate - 1);
+    else if (a === 'next') { if (B.screen === 1) syncItems(); B.screen = Math.min(3, B.screen + 1); }
+    else if (a === 'back') B.screen = Math.max(1, B.screen - 1);
+    else if (a === 'chip') { var it = B.items[key], c = CHIPS[+t.getAttribute('data-chip')], p = it.chips.indexOf(c); if (p > -1) it.chips.splice(p, 1); else it.chips.push(c); }
+    else if (a === 'rep') B.items[key].rep = !B.items[key].rep;
+    else if (a === 'copy') {
+      var src = B.items[key], base = key.split('-')[0];
+      keysList().forEach(function (x) { if (x.t.id === base && x.key !== key) { B.items[x.key].chips = src.chips.slice(); B.items[x.key].rep = src.rep; } });
+    }
+    else if (a === 'tick') { var i = +t.getAttribute('data-i'); B.d.ticks[i] = B.d.ticks[i] ? 0 : 1; }
+    else if (a === 'send') { send(false); return; }
+    else if (a === 'emailonly') { send(true); return; }
+    else return;
+    render();
+    if (a === 'next' || a === 'back') document.getElementById('book').scrollIntoView({ behavior: 'smooth' });
+  });
+  function onField(e) {
+    var f = e.target.getAttribute && e.target.getAttribute('data-field');
+    if (!f) return;
+    var k = e.target.getAttribute('data-key');
+    if (k) B.items[k][f] = e.target.value;
+    else if (f === 'donNote') B.donateNote = e.target.value;
+    else B.d[f] = e.target.value;
+  }
+  wrap.addEventListener('input', onField);
+  wrap.addEventListener('change', onField);
+  render();
 
   /* FormSubmit photo form posts normally (file upload), then lands back here with ?sent=1 */
   (function () {
