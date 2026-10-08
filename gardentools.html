@@ -170,6 +170,13 @@
 
     /* booking */
     .bk-wrap { max-width: 560px; margin: 0 auto; }
+    .bk-close { display: none; background: none; border: 1px solid var(--border); color: var(--fg); font-family: 'Jost', sans-serif; font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; padding: 0 18px; min-height: 44px; margin-bottom: 18px; cursor: pointer; position: sticky; top: 12px; background-color: var(--bg); z-index: 2; }
+    @media (max-width: 760px) {
+      #book.bk-full { position: fixed; inset: 0; z-index: 1000; background: var(--bg); overflow-y: auto; -webkit-overflow-scrolling: touch; padding: 14px 0 40px; }
+      #book.bk-full .container { padding: 0 16px; }
+      #book.bk-full .bk-close { display: inline-block; }
+      body.bk-lock { overflow: hidden; }
+    }
     .bk-prog { display: flex; gap: 6px; margin-bottom: 14px; }
     .bk-prog i { flex: 1; height: 3px; background: var(--border); }
     .bk-prog i.on { background: var(--accent); }
@@ -357,6 +364,7 @@
 <!-- BOOK IN -->
 <section id="book">
   <div class="container">
+    <button class="bk-close" id="bkClose" type="button">&larr; Back to the page</button>
     <div class="bk-wrap" id="bookWrap" aria-live="polite"></div>
   </div>
 </section>
@@ -665,16 +673,17 @@
     if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(d.em.trim())) return 'Please check your email address.';
     return '';
   }
-  function bookingText(ref, batch, ready) {
+  function bookingText(ref, batch, ready, emailOnly) {
     var d = B.d, n = totalTools(), rep = repairCount(), out = [];
     out.push('Hello Nicholas,', 'Booking for the next sharpening day.', '', 'Ref: ' + ref, 'Name: ' + d.fn.trim() + ' ' + d.sn.trim(), 'Mobile: ' + d.mb.trim(), 'Email: ' + d.em.trim());
     if (d.pc.trim()) out.push('Postcode: ' + d.pc.trim());
     if (n) out = out.concat(['', 'Tools (' + n + '):'], toolLines());
     if (B.donate) out.push('', 'Donated for sculpture (' + B.donate + '): ' + (B.donateNote.trim() || 'not described'));
     if (n) { out.push('', 'Sharpening: ' + plural(n, 'tool', 'tools') + ', £' + (n * 8)); if (rep) out.push('Repairs to quote: ' + rep); }
-    out.push('', 'Drop off by: ' + batch + ', 4pm', 'Ready from: ' + ready + ', midday', '',
-             'Allotment: ' + d.al + ' | Heard: ' + d.hd + ' | Reminders: ' + yn(tickOn(0)) + ' | Photos: ' + yn(tickOn(4)) + ' | Newsletter: ' + yn(tickOn(5)) +
-             (interestedList().length ? ' | Also interested: ' + interestedList().join(', ') : ''));
+    out.push('', 'Drop off by: ' + batch + ', 4pm', 'Ready from: ' + ready + ', midday');
+    out.push('', 'Allotment: ' + d.al, 'Heard via: ' + d.hd, 'Reminders: ' + yn(tickOn(0)), 'Photos: ' + yn(tickOn(4)), 'Newsletter: ' + yn(tickOn(5)));
+    if (interestedList().length) out.push('Also interested: ' + interestedList().join(', '));
+    if (emailOnly) out.push('', 'Sent by email instead of the form.');
     return out.join('\n');
   }
   function progress(n) { return '<div class="bk-prog">' + [1, 2, 3].map(function (i) { return '<i class="' + (i <= n ? 'on' : '') + '"></i>'; }).join('') + '</div>'; }
@@ -814,18 +823,18 @@
     if (err) { render(); return; }
     var info = batchInfo(new Date()), batch = fmtDay(info.sunday), ready = fmtDay(info.ready);
     var d = B.d, ref = makeRef(d.fn, d.sn, info.ready), n = totalTools(), rep = repairCount(), total = n * 8;
-    var msg = bookingText(ref, batch, ready);
+    var msg = bookingText(ref, batch, ready, emailOnly);
     var gb = new URLSearchParams();
     function put(k, v) { gb.append(GE[k], v); }
     put('ref', ref); put('fn', d.fn.trim()); put('sn', d.sn.trim()); put('mb', d.mb.trim()); put('em', d.em.trim()); put('pc', d.pc.trim());
     put('batch', batch); put('ready', ready);
     var toolsTxt = toolLines();
     if (B.donate) toolsTxt.push('Donated for sculpture (' + B.donate + '): ' + (B.donateNote.trim() || 'not described'));
-    put('tools', toolsTxt.join('\n')); put('count', String(n)); put('sharp', '£' + total); put('rep', String(rep));
+    put('tools', (emailOnly ? 'BOOKED BY EMAIL INSTEAD (not through the form)\n' : '') + toolsTxt.join('\n')); put('count', String(n)); put('sharp', '£' + total); put('rep', String(rep));
     put('al', d.al); put('hd', d.hd); put('rem', yn(tickOn(0))); put('int', interestedList().join(', '));
     put('pho', yn(tickOn(4))); put('nl', yn(tickOn(5))); put('don', String(B.donate));
     var fd = new FormData();
-    fd.append('_subject', 'GARDEN TOOLS BOOKING - ' + ref + ' - ' + d.fn.trim() + ' ' + d.sn.trim() + ' - ' + plural(n, 'tool', 'tools') + ' - £' + total);
+    fd.append('_subject', (emailOnly ? 'EMAIL INSTEAD - ' : '') + 'GARDEN TOOLS BOOKING - ' + ref + ' - ' + d.fn.trim() + ' ' + d.sn.trim() + ' - ' + plural(n, 'tool', 'tools') + ' - £' + total);
     fd.append('_replyto', d.em.trim()); fd.append('reference', ref); fd.append('name', d.fn.trim() + ' ' + d.sn.trim());
     fd.append('email', d.em.trim()); fd.append('mobile', d.mb.trim()); fd.append('message', msg);
     var btn = document.getElementById('bkSend'); if (btn) { btn.disabled = true; btn.textContent = 'Sending...'; }
@@ -842,13 +851,41 @@
                    email: d.em.trim(), wa: WHATSAPP_NUMBER ? waHref(msg) : '', emailOnly: !!emailOnly,
                    countText: plural(n, 'tool', 'tools') + ', repairs quoted first' };
         B.screen = 4; B.err = ''; render();
-        document.getElementById('book').scrollIntoView({ behavior: 'smooth' });
+        toTop();
       })
       .catch(function () {
         B.err = 'Could not send. Check your connection and try again, or WhatsApp me instead.';
         render();
       });
   }
+
+  function bkFull(on) {
+    var b = document.getElementById('book');
+    if (!b) return;
+    b.classList.toggle('bk-full', on);
+    document.body.classList.toggle('bk-lock', on);
+  }
+  function openBook() {
+    if (window.innerWidth > 760) return;
+    bkFull(true);
+    window.scrollTo(0, 0);
+    document.getElementById('book').scrollTop = 0;
+  }
+  function closeBook() { bkFull(false); window.scrollTo(0, 0); }
+  function toTop() {
+    var b = document.getElementById('book');
+    if (b.classList.contains('bk-full')) b.scrollTop = 0;
+    else b.scrollIntoView({ behavior: 'smooth' });
+  }
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href="#book"]');
+    if (!a || window.innerWidth > 760) return;
+    e.preventDefault();
+    openBook();
+  });
+  document.getElementById('bkClose').addEventListener('click', closeBook);
+  window.addEventListener('resize', function () { if (window.innerWidth > 760) bkFull(false); });
+  if (location.hash === '#book') openBook();
 
   var wrap = document.getElementById('bookWrap');
   wrap.addEventListener('click', function (e) {
@@ -873,7 +910,7 @@
     else if (a === 'emailonly') { send(true); return; }
     else return;
     render();
-    if (a === 'next' || a === 'back') document.getElementById('book').scrollIntoView({ behavior: 'smooth' });
+    if (a === 'next' || a === 'back') toTop();
   });
   function onField(e) {
     var f = e.target.getAttribute && e.target.getAttribute('data-field');
