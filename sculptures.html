@@ -556,13 +556,21 @@
 
       <div class="pc" id="sam-the-spider">
         <div class="pc-img">
-          <img src="images/sc-sam-the-spider.jpg" alt="Sam the Spider, rope and steel, under UV" loading="lazy">
-          <span class="pc-badge sold">Sold</span>
+          <img src="images/sc-sam-the-spider.jpg" alt="Sam the Spider, a steel spider welded from surgical instruments, in the grass" loading="lazy">
+          <span class="pc-badge sold">Original sold</span>
         </div>
         <div class="pc-info">
           <div class="pc-name">Sam the Spider</div>
-          <div class="pc-sub">Rope and steel &middot; UV reactive</div>
-          <div class="pc-foot"><span class="pc-price" style="color:var(--fg-muted);">&pound;195</span><button class="pc-add" disabled>Sold</button></div>
+          <div class="pc-sub">Surgical instruments, welded &middot; Made to order &middot; Each one a little different</div>
+          <select class="pc-opt" id="sam-finish" aria-label="Sam the Spider finish">
+            <option value="raw|175">Raw stainless steel, &pound;175</option>
+            <option value="neon green|195">Neon green, &pound;195</option>
+            <option value="fuchsia pink|195">Fuchsia pink, &pound;195</option>
+            <option value="orange|195">Orange, &pound;195</option>
+            <option value="red|195">Red, &pound;195</option>
+          </select>
+          <div class="swatches" aria-hidden="true"><span style="background:#39ff14"></span><span style="background:#ff1dce"></span><span style="background:#ff6a00"></span><span style="background:#ff1a1a"></span></div>
+          <div class="pc-foot"><span class="pc-price">From &pound;175</span><button class="pc-add" onclick="addSam()">Pre-order</button></div>
         </div>
       </div>
 
@@ -1001,6 +1009,11 @@
     var v = document.getElementById('giraffe-finish').value.split('|');
     var finish = v[0], price = parseInt(v[1], 10);
     addToCart('giraffe-' + finish.replace(/\s+/g, '-'), 'Giraffe, ' + finish + (finish === 'raw' ? ' steel' : ''), price);
+  }
+  function addSam() {
+    var v = document.getElementById('sam-finish').value.split('|');
+    var finish = v[0], price = parseInt(v[1], 10);
+    addToCart('sam-the-spider-' + finish.replace(/\s+/g, '-'), 'Sam the Spider, ' + (finish === 'raw' ? 'raw stainless steel' : finish) + ' (pre-order)', price);
   }
   function removeFromCart(id) { cart = cart.filter(function (i) { return i.id !== id; }); saveCart(); renderCart(); }
 
